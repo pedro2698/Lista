@@ -1,0 +1,29 @@
+<h2> ALUMNOS</h2>
+<ul class="alumnos">
+<li *ngFor="let alum of alumnos" [class.selected]="alum === selectedAlum" (click)="onSelect(alum)">
+<span class="badge">{{alum.matricula}} </span> {{alum.name}}  
+
+</li>
+</ul>
+
+<div *ngIf="selectedAlum">
+
+<h2>{{selectedAlum.name | uppercase}}  INFORMATION</h2>
+<div><span>MATRICULA: </span>{{selectedAlum.matricula}}</div>
+
+<div>
+<label>NAME:
+<input [(ngModel)]="selectedAlum.name"
+placeholder="name"/>
+</label>
+</div>
+<div></div>
+<div>
+    <label>CARRERA:
+    <input [(ngModel)]="selectedAlum.carrera"
+    placeholder="carrera"/>
+    </label>
+    </div>
+
+</div>
+
